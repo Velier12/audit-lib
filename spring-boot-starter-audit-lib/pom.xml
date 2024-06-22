@@ -41,9 +41,8 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>ru.fiarr4ik</groupId>
-            <artifactId>audit-lib-homework</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
     </dependencies>
 
