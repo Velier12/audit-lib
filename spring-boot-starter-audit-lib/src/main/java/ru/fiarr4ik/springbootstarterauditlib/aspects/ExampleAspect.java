@@ -1,4 +1,4 @@
-package ru.fiarr4ik.springbootstarterauditlib;
+package ru.fiarr4ik.springbootstarterauditlib.aspects;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -9,15 +9,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class ExampleAspect {
 
-    @Around("@annotation(LogExecutionTime)")
+    @Around("@annotation(ru.fiarr4ik.springbootstarterauditlib.annotations.LogExecutionTime)")
     public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
         long start = System.currentTimeMillis();
 
         Object proceed = joinPoint.proceed();
+        String methodName = joinPoint.getSignature().getName();
+
 
         long executionTime = System.currentTimeMillis() - start;
 
-        System.out.println(joinPoint.getSignature() + " выполнился за " + executionTime + "ms");
+        System.out.println(joinPoint.getSignature() + " Метод " + methodName + " выполнился за " + executionTime + " ms" );
         return proceed;
     }
 

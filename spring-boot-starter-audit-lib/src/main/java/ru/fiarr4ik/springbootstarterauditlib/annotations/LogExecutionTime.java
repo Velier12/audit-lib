@@ -1,4 +1,4 @@
-package ru.fiarr4ik.springbootstarterauditlib;
+package ru.fiarr4ik.springbootstarterauditlib.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
