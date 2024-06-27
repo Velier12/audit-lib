@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -29,7 +30,12 @@ import java.util.Arrays;
         @Autowired
         private MainConfig mainConfig;
 
-        @Around("@annotation(ru.fiarr4ik.springbootstarterauditlib.annotations.AuditLog)")
+        @Pointcut("@annotation(ru.fiarr4ik.springbootstarterauditlib.annotations.AuditLog)")
+        private void loggerAnnotation() {
+
+        }
+
+        @Around("loggerAnnotation()")
         public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
             MethodSignature signature = (MethodSignature) joinPoint.getSignature();
             Method method = signature.getMethod();
