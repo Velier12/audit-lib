@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import ru.fiarr4ik.springbootstarterauditlib.annotations.AuditLog;
 import ru.fiarr4ik.springbootstarterauditlib.enums.LogLevel;
 
-@Controller
+    @Controller
     public class MainController {
 
         @RequestMapping("/")
