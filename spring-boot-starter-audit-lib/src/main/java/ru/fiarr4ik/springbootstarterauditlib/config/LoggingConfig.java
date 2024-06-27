@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
     @Configuration
     @ConfigurationProperties(prefix = "auditlog")
     @ComponentScan(basePackages = "ru.fiarr4ik.springbootstarterauditlib")
-    public class MainConfig {
+    public class LoggingConfig {
         private boolean consoleEnabled;
         private boolean fileEnabled;
         private String filePath;
